@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battery Monitoring System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Battery Monitoring Dashboard</h1>
+    </header>
+
+    
+    <section class="stats">
+      <div class="stat-card">
+        <h2 id="voltage">Voltage: 0 V</h2>
+      </div>
+      <div class="stat-card">
+        <h2 id="current">Current: 0 A</h2>
+      </div>
+      <div class="stat-card">
+        <h2 id="soc">SOC: 0 %</h2>
+      </div>
+    </section>
+
+    
+    <section class="input-section">
+      <h3>Enter Battery Data</h3>
+      <input type="number" step="0.01" id="inputVoltage" placeholder="Voltage (V)">
+      <input type="number" step="0.01" id="inputCurrent" placeholder="Current (A)">
+      <input type="number" step="1" id="inputSOC" placeholder="SOC (%)">
+      <button onclick="submitData()">Submit</button>
+    </section>
+
+    
+    <section class="chart-section">
+      <canvas id="batteryChart"></canvas>
+    </section>
+
+   
+    <section class="log-section">
+      <h3>Recent Data Logs</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Voltage (V)</th>
+            <th>Current (A)</th>
+            <th>SOC (%)</th>
+          </tr>
+        </thead>
+        <tbody id="logTable"></tbody>
+      </table>
+    </section>
+
+    <div id="alert" class="alert"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
